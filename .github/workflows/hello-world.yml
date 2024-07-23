@@ -32,6 +32,14 @@ jobs:
       - name: Install databricks CLI
         run: |
           curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+
+      # List databricks repos
+      - name: List databricks repos
+        env:
+          DATABRICKS_HOST: ${{ vars.LHN_DEV_DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.LHN_DEV_DATABRICKS_TOKEN }}
+        run: |
+          databricks repos list
         
       # Runs a single command using the runners shell
       - name: Run a one-line script
