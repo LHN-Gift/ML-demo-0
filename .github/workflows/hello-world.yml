@@ -3,7 +3,8 @@
 name: CI
 
 env:
-  GBL_name: 'Nhat'
+  DATABRICKS_HOST: ${{ vars.LHN_DEV_DATABRICKS_HOST }}
+  DATABRICKS_TOKEN: ${{ secrets.LHN_DEV_DATABRICKS_TOKEN }}
 
 # Controls when the workflow will run
 on:
@@ -35,17 +36,12 @@ jobs:
 
       # List databricks repos
       - name: List databricks repos
-        env:
-          DATABRICKS_HOST: ${{ vars.LHN_DEV_DATABRICKS_HOST }}
-          DATABRICKS_TOKEN: ${{ secrets.LHN_DEV_DATABRICKS_TOKEN }}
         run: |
           databricks repos list
 
       # update databricks repos
-      - name: List databricks repos
-        env:
-          DATABRICKS_HOST: ${{ vars.LHN_DEV_DATABRICKS_HOST }}
-          DATABRICKS_TOKEN: ${{ secrets.LHN_DEV_DATABRICKS_TOKEN }}
+      - name: Update databricks repos
+        
         run: |
           databricks repos update /Repos/GitHub/ML-demo-0 --branch main
         
