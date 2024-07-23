@@ -12,3 +12,7 @@ data = {
 df = pd.DataFrame(data=data)
 
 df
+
+# COMMAND ----------
+
+print('Done example data')
