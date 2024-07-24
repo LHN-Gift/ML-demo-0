@@ -31,3 +31,10 @@ career
 # COMMAND ----------
 
 print('Done adding extra data')
+
+# COMMAND ----------
+
+# join two dataframes
+# ===================
+df = df.merge(career, on='name')
+df
