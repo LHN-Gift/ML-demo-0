@@ -38,3 +38,7 @@ print('Done adding extra data')
 # ===================
 df = df.merge(career, on='name')
 df
+
+# COMMAND ----------
+
+print('Done')
