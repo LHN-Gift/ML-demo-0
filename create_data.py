@@ -16,3 +16,18 @@ df
 # COMMAND ----------
 
 print('Done example data')
+
+# COMMAND ----------
+
+data = {
+    'name': ['Nhat', 'Tam', 'N. Anh', 'Q. Anh'],
+    'professional': ['Data Engineer', 'CEO', 'Boss', 'Boss']
+}
+
+career = pd.DataFrame(data=data)
+
+career
+
+# COMMAND ----------
+
+print('Done adding extra data')
